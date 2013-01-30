@@ -1,0 +1,18 @@
+{
+    "name": "ktemplate",
+    "title": "ktemplate",
+    "description": "简单支持预编译的 js 模版",
+    "version": "0.0.1",
+    "homepage": "",
+    "author": {
+        "name": "KnightWu"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wulijian/ktemplate.git"
+    },
+    "dependencies": {
+        "source-map": "latest"
+    },
+    "keywords": ["compile", "nodejs", "template", "模版", "预编译"]
+}
