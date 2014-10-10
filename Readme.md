@@ -3,6 +3,34 @@ ktemplate 是依赖于 nodejs 的 js 模版。
 它的语法简单，采用js代码加html代码的构成，因此学习成本较低。
 支持 sourcemap 调试，解决大多数模版难以调试的难题。
 
+### 原理
+ktemplate 的模板，会通过nodejs 转变成js的一个函数，函数会包含一个参数data，用来传递数据，返回的是拼凑好的html代码。
+
+例如：
+```
+<div id="test">
+    hi, <%= hi %><br>
+    <a href="javascript:void(0)"><%= hello %></a>
+</div>
+
+```
+经过编译，会生成方法：
+```
+function anonymous(_data) {
+    var htmlCode = "";
+    with (_data || {}) {
+        htmlCode += '<div id="test">\r\n    hi, ';
+        htmlCode += hi;
+        htmlCode += '<br>\r\n    <a href="javascript:void(0)">';
+        htmlCode += hello;
+        htmlCode += "</a>\r\n</div>";
+    }
+    return htmlCode;
+}
+```
+所以，最终使用的只是js方法，性能问题不需要考虑。
+
+### 语法
 #### 输出
 输出标示符会将<%= %>内的正规的js的值，输出到其所在的位置。
 
@@ -62,6 +90,9 @@ b.html
 这是一个实例
 子模板的数据
 ```
+### 数据
+在 ktemplate 中，为了在写模板的时候省去写 _data 等参数的麻烦，在编译过程中，加入了with(_data){...}。优点是可以在套模板的时候省略_data，缺点是with会在运行时添加一层作用域，稍大。
+
 
 ## Contributors
 authors  : KnightWu
