@@ -7,7 +7,7 @@ ktemplate 是依赖于 nodejs 的 js 模版。
 ktemplate 的模板，会通过nodejs 转变成js的一个函数，函数会包含一个参数data，用来传递数据，返回的是拼凑好的html代码。
 
 例如：
-```
+```HTML
 <div id="test">
     hi, <%= hi %><br>
     <a href="javascript:void(0)"><%= hello %></a>
@@ -15,7 +15,7 @@ ktemplate 的模板，会通过nodejs 转变成js的一个函数，函数会包�
 
 ```
 经过编译，会生成方法：
-```
+```Javascript
 function anonymous(_data) {
     var htmlCode = "";
     with (_data || {}) {
