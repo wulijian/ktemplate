@@ -6,7 +6,7 @@ ktemplate 是依赖于 nodejs 的 js 模版。
 #### 输出
 输出标示符会将<%= %>内的正规的js的值，输出到其所在的位置。
 
-```html
+```HTML
 <div>
 <%= _data.content %>
 </div>
@@ -14,7 +14,7 @@ ktemplate 是依赖于 nodejs 的 js 模版。
 
 如果以上 _data.content = "hello ktemplate"; 那么，最终的结果将是：
 
-```html
+```HTML
 <div>
 hello ktemplate
 </div>
@@ -22,7 +22,7 @@ hello ktemplate
 
 #### js语句
 <% %>内可以写任何符合的 js 语句，例如：
-```html
+```HTML
 <%var a =3; %>
 <%var b=4; %>
 <%= a+b %>
@@ -47,18 +47,18 @@ url 代表子模板的相对地址，data是指传给子模板内的数据。
 ```
 你建了两个ktemplate模板
 a.html
-```html
+```HTML
 <%= _data.content.name %>
 ```
 
 b.html
-```html
+```HTML
 <%= head %>
 <%== ./a(_data.content) %>
 ```
 
 其中，b.html 中引用了 a.html 模板，并且将数据的 content属性传给了子模板。最终渲染结果：
-```html
+```HTML
 这是一个实例
 子模板的数据
 ```
