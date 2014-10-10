@@ -4,7 +4,7 @@ ktemplate 是依赖于 nodejs 的 js 模版。
 支持 sourcemap 调试，解决大多数模版难以调试的难题。
 
 ### 原理
-ktemplate 的模板，会通过nodejs 转变成js的一个函数，函数会包含一个参数data，用来传递数据，返回的是拼凑好的html代码。
+使用 ktemplate 语法的模板，会通过模板引擎的编译，转变成一个js函数，函数包含一个参数 _data。调用该函数，传入数据，返回的是拼凑好的html代码。
 
 例如：
 ```HTML
