@@ -1,6 +1,7 @@
 <div id="phrsListTab" class="trans-wrapper clearfix">
-    <% var word = _data.word, baseTrans = word.baseTrans; %>
-    <% if (baseTrans["pic-dict"]) { %>
+    <% var word = _data.word, baseTrans = word.baseTrans;
+     if (baseTrans["pic-dict"]) { %>
+
         <%== ./imgDict(getVal.val(baseTrans, "pic-dict"))%>
     <% } %><!-- asdgasdgas) <!--dg--> a --> asdga <!--
        good
@@ -23,9 +24,9 @@ asg is band   ->- --
     <% var trs = getVal.val(baseTrans, "trs"), trsLength = trs.length; if ( trsLength > 0 ) { %>
     <div class="trans-container">
         <ul>
-            <% for ( var i = 0; i < trsLength; i++ ) { %>
-            <% var senObj = trs[i].l; %>
-            <% for (var key1 in senObj ) %>
+            <% for ( var i = 0; i < trsLength; i++ ) {
+                var senObj = trs[i].l;
+               for (var key1 in senObj ) %>
             <li><span class="def"><%= senObj[key1] %></span></li>
             <%}%>
             <% } %>
