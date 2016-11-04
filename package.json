@@ -2,7 +2,7 @@
     "name": "ktemplate",
     "title": "ktemplate",
     "description": "简单支持预编译的 js 模版",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "homepage": "",
     "author": {
         "name": "KnightWu"
